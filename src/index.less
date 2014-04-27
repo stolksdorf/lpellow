@@ -1,0 +1,104 @@
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+
+@import "reset";
+@import "animations";
+@import "colors";
+
+
+
+body{
+	background-image : url('http://subtlepatterns.com/patterns/p6.png');
+	font-family: 'Raleway', 'sans-serif';
+	color: #333;
+
+}
+
+.container{
+	text-align: center;
+	margin-top: 20%;
+
+	.name{
+		.fade(0.5s);
+		font-weight: 800;
+		font-size: 2.8em;
+	}
+	.description{
+		margin-top: 20px;
+		.fade(1.25s);
+		color : @concrete;
+		//font-family: 'Lobster', 'cursive';
+	}
+	.contact{
+		margin-top: 30px;
+		font-size : 1.6em;
+		font-weight: 800;
+		&>*{
+			margin: 0px 20px;
+		}
+		.resume{
+			.fade(2s);
+			.link(@green_sea);
+			display: inline-block;
+		}
+		.portfolio{
+			.fade(2.3s);
+			.link(@pomegranate);
+			display: inline-block;
+		}
+		.email{
+			.fade(2.6s);
+			.link(@belize_hole);
+			display: inline-block;
+		}
+	}
+}
+
+
+//Mixins
+
+.fade(@delay){
+	.fadeInDown(1s);
+	opacity : 0;
+	.keep();
+	.delay(@delay);
+}
+
+
+.link(@color : black){
+	position: relative;
+	padding: 10px;
+	cursor : pointer;
+	.animate(color, 0.3s);
+	text-decoration: none;
+	color : inherit;
+
+	&::after, &::before{
+		.animateAll(0.3s);
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background: @color;
+		content: '';
+		opacity: 0;
+	}
+
+	&::after{
+		bottom: 0;
+		.transform(translateY(10px));
+	}
+	&::before{
+		top: 0;
+		.transform(translateY(-10px));
+	}
+
+	&:hover{
+		color : @color;
+		&::after, &::before{
+			.transform(translateY(0px));
+			opacity: 1;
+		}
+	}
+
+}

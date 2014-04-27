@@ -16,14 +16,15 @@ var port = process.env.PORT || 8000;
 
 
 app.get('/', function(req, res){
-
-
 	res.render('index.html');
 });
 
+app.listen(port, function() {
+	console.log("Listening on " + port);
+});
 
 
-
+/*
 module.exports = {
 	start : function(){
 		app.listen(port, function() {
@@ -31,3 +32,4 @@ module.exports = {
 		});
 	}
 }
+*/

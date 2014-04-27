@@ -2,12 +2,12 @@ var gulp = require('gulp');
 var less = require('gulp-less');
 var browserify = require('gulp-browserify');
 
-var server = require('./server');
+
 
 
 
 gulp.task('server', function(){
-	server.start();
+	var server = require('./server');
 });
 
 gulp.task('html', function(){

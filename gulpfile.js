@@ -17,13 +17,11 @@ gulp.task('html', function(){
 
 gulp.task('styles', function(){
 	gulp.src('src/index.less')
-
 		.pipe(less({
 			compress : true,
 			sourceMap : true
 		}).on('error', function(err) { console.log('WOAH', err);}))
 		.pipe(gulp.dest('./public'))
-
 });
 
 gulp.task('scripts', function() {

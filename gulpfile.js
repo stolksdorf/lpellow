@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
-var browserify = require('gulp-browserify');
+//var browserify = require('gulp-browserify');
 
 
 
@@ -34,10 +34,6 @@ gulp.task('scripts', function() {
 		*/
 });
 
-gulp.task('assets', function(){
-
-})
-
 
 gulp.task('watch', function(){
 	gulp.watch('src/**/*.less', ['styles']);
@@ -45,6 +41,6 @@ gulp.task('watch', function(){
 	gulp.watch('src/**/*.html', ['html']);
 });
 
-gulp.task('build', ['html', 'styles', 'scripts'])
-
-gulp.task('default', ['build', 'server', 'watch'])
+gulp.task('build', ['html', 'styles', 'scripts']);
+gulp.task('prod', 'build');
+gulp.task('default', ['build', 'server', 'watch']);

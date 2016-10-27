@@ -1,8 +1,5 @@
-//Globals
-GLOBAL.fs      = require('fs');
-GLOBAL._       = require('underscore');
-GLOBAL.express = express = require("express");
-GLOBAL.app     = module.exports = express();
+var express = express = require("express");
+var app     = module.exports = express();
 
 
 //Express

@@ -1,47 +1,61 @@
+
 @import "core_styles/reset";
 @import "core_styles/animations";
 @import "core_styles/colors";
 body{
-	font-family                  : 'Raleway', 'sans-serif';
-	color                        : #333;
 	background-image : url('/background.png');
+	//font-family      : 'Raleway', 'sans-serif';
+	font-family: 'Libre Franklin', sans-serif;
+	color            : #333;
 }
 .container{
 	margin-top : 15%;
 	text-align : center;
 	.name{
+		text-transform: uppercase;
 		.fade(0.5s);
 		font-size   : 2.8em;
-		font-weight : 800;
+		font-weight : 500;
+		.last{
+			font-weight : 800;
+		}
 	}
 	.description{
 		.fade(1.25s);
 		margin-top : 20px;
 		color      : @concrete;
-		//font-family: 'Lobster', 'cursive';
+		color : @pipPink;
+		.bar{
+			display: inline-block;
+			vertical-align: text-bottom;
+			width: 2px;
+			height: 1.3em;
+			margin: 0px 20px;
+			background-color: @pipPink;
+		}
 	}
 	.contact{
-		margin-top  : 30px;
-		font-size   : 1.6em;
-		font-weight : 800;
+		text-transform: uppercase;
+		width        : 400px;
+		margin-top   : 50px;
+		margin-right : auto;
+		margin-left  : auto;
+		font-size    : 1.6em;
+		font-weight  : 500;
 		&>*{
-			margin : 0px 20px;
+			display : block;
+			margin  : 20px 20px;
+			//font-family      : 'Raleway', 'sans-serif';
+			//font-family: 'Lobster';
 		}
-		.resume{
-			.fade(2s);
-			.link(@green_sea);
-			display : inline-block;
-		}
-		.portfolio{
-			.fade(2.3s);
-			.link(@pomegranate);
-			display : inline-block;
-		}
-		.email{
-			.fade(2.6s);
-			.link(@belize_hole);
-			display : inline-block;
-		}
+		:nth-child(1){ .fade(2s); }
+		:nth-child(2){ .fade(2.3s); }
+		:nth-child(3){ .fade(2.6s); }
+		:nth-child(4){ .fade(2.9s); }
+		.resume{    .link(@pipPink); }
+		.portfolio{ .link(@pipPink); }
+		.email{     .link(@pipPink); }
+		.site{      .link(@pipPink); }
 	}
 }
 //Mixins

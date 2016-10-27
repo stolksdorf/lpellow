@@ -35,7 +35,7 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('assets', function(){
-	gulp.src('src/**/*.ico')
+	gulp.src(['src/**/*.ico', 'src/**/*.png'])
 		.pipe(gulp.dest('./public'));
 })
 
